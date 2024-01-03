@@ -19,18 +19,16 @@ module Dumb
                 createVariables!
                 createDgenFiles!
 
-                puts 'Done!'
+                puts 'Done! 🎉'
             end
 
             private
 
             def createDgenFiles!
-                # create root folder
                 if !File.directory?('.dumb_templates/default/root')
                     Dir.mkdir('.dumb_templates/default/root')
                 end
 
-                # create dgen files
                 file = File.new('.dumb_templates/default/root/file.dgen', 'w')
                 file.puts <<-TEXT
 class {{class_name}}Class {}
@@ -48,6 +46,7 @@ class Sub{{class_name}}Class {}
 TEXT
 
                 file.close
+                puts 'Created .dgen files'
             end
 
             def createLinker!
@@ -69,6 +68,7 @@ root:
 TEXT
 
                 file.close
+                puts 'Created linker.yml'
             end
 
             def createVariables!
@@ -80,6 +80,8 @@ variables:
 TEXT
 
                 file.close
+
+                puts 'Created variables.yml'
             end
         end
     end

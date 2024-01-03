@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
     s.name        = "dumb_generator"
-    s.version     = "0.0.2"
+    s.version     = "0.0.3"
     s.summary     = "A simple scaffolding generator"
     s.description = "This is a simple scaffolding generator. A Copy-Paste tool with some extra features like variable injection, and it intends on remaining like this."
     s.authors     = ["Cristian Cosneanu"]
