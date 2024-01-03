@@ -33,6 +33,3 @@ HELP
 		end
 	end
 end
-
-Dumb::Generator::Base.new.execute!
-
