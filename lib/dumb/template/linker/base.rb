@@ -24,7 +24,7 @@ module Dumb
           links.each do |link|
             link.transform_keys!(&:to_sym)
 
-            file_path = template_path + '/' + link_destination_directory + '/' + link[:to_destinaiton_file]
+            file_path = template_path + '/' + link_destination_directory + '/' + link[:to_destination_file]
             template_content = File.read(config[:root_path] + '/' + link[:dgen_template])
 
             parsed_path = PathParser.new(file_path, variables).parse

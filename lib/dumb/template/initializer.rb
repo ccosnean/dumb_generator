@@ -61,10 +61,10 @@ root:
   links:
     - link:
       dgen_template: "subdir/file.dgen"
-      to_destinaiton_file: "subdir/{{file_name}}_file.txt"
+      to_destination_file: "subdir/{{file_name}}_file.txt"
     - link:
       dgen_template: "file.dgen"
-      to_destinaiton_file: "{{file_name}}_file.txt"
+      to_destination_file: "{{file_name}}_file.txt"
 TEXT
 
                 file.close
