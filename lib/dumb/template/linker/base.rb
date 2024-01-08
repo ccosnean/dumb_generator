@@ -20,15 +20,20 @@ module Dumb
           dgen_source_directory = root['dgen_source_directory']
           link_destination_directory = root['link_destination_directory']
           links = root['links']
-          template_path = config[:template_path]
+          template_full_path = config[:template_path]
 
+
+          
           links.each do |link|
             link.transform_keys!(&:to_sym)
-
-            file_path = template_path + '/' + link_destination_directory + '/' + link[:to_destination_file]
-            template_content = File.read(dgen_source_directory + '/' + link[:dgen_template])
-
+            
+            file_path = template_full_path + '/' + link_destination_directory + '/' + link[:to_destination_file]
+            template_path = template_full_path + '/' + dgen_source_directory + '/' + link[:dgen_template]
+            
             parsed_path = PathParser.new(file_path, variables).parse
+            parsed_templete_path = PathParser.new(template_path, variables).parse
+            
+            template_content = File.read(parsed_templete_path)
             parsed_content = ContentParser.new(template_content, variables).parse
 
             FileCreator.new(parsed_path, parsed_content).execute
