@@ -43,7 +43,6 @@ module Dumb
                 template_names.each do |template|
                     templates[template] = {
                         template_path: "#{templates_path}/#{template}",
-                        root_path: "#{templates_path}/#{template}/root",
                         linker_path: "#{templates_path}/#{template}/linker.yml",
                         variables_path: "#{templates_path}/#{template}/variables.yml"
                     }

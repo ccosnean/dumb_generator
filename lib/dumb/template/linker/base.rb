@@ -17,6 +17,7 @@ module Dumb
 
         def execute!
           root = dgen_linker['root']
+          dgen_source_directory = root['dgen_source_directory']
           link_destination_directory = root['link_destination_directory']
           links = root['links']
           template_path = config[:template_path]
@@ -25,7 +26,7 @@ module Dumb
             link.transform_keys!(&:to_sym)
 
             file_path = template_path + '/' + link_destination_directory + '/' + link[:to_destination_file]
-            template_content = File.read(config[:root_path] + '/' + link[:dgen_template])
+            template_content = File.read(dgen_source_directory + '/' + link[:dgen_template])
 
             parsed_path = PathParser.new(file_path, variables).parse
             parsed_content = ContentParser.new(template_content, variables).parse

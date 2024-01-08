@@ -57,6 +57,7 @@ TEXT
 # All paths are relative
 
 root:
+  dgen_source_directory: "root"
   link_destination_directory: "../../src/{{file_name}}"
   links:
     - link:
