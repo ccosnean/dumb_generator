@@ -14,6 +14,7 @@ module Dumb
 
             private
             def validate_template_exists!
+                # add contents validators
                 linker_missing = !File.exist?("#{templates_path}/#{template_name}/linker.yml")
                 variables_missing = !File.exist?("#{templates_path}/#{template_name}/variables.yml")
                 root_missing = !File.directory?("#{templates_path}/#{template_name}/root")
